@@ -1,7 +1,11 @@
 const express = require("express")
 const app = express();
 const mongoose = require('mongoose');
-const url = "mongodb+srv://subhash:sai777@cluster0.d3zfx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+const dotenv = require("dotenv");
+dotenv.config();
+
+const url = process.env.MONGO_URI;
 
 const cors = require("cors");
 app.use(cors());
@@ -18,6 +22,7 @@ mongoose.connect(url).then(() => {
 
 app.use('/User',useRoute);
 
-const server = app.listen(2000,
-    () => console.log('server is loading..http://localhost:%s/User', server.address().port)
-)
+const PORT = process.env.PORT || 2000;
+const server = app.listen(PORT, () =>
+    console.log(`Server is running on http://localhost:${PORT}/User`)
+);
