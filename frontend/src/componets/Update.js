@@ -12,7 +12,7 @@ const Update = () => {
 
     const getSingleUser = async () => {
 
-        const response = await fetch(`http://localhost:2000/User/getData/${id}`);
+        const response = await fetch(`https://crud-app-q3s2.onrender.com/User/getData/${id}`);
 
         const result = await response.json();
 
@@ -32,7 +32,7 @@ const Update = () => {
 
         const UpdatedUser = { name, email, age };
 
-        const response = await fetch(`http://localhost:2000/User/updateData/${id}`, {
+        const response = await fetch(`https://crud-app-q3s2.onrender.com/User/updateData/${id}`, {
             method: "PATCH",
             body: JSON.stringify(UpdatedUser),
             headers: { "Content-Type": "application/json" },

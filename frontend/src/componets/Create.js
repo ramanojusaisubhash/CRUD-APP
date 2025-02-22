@@ -13,7 +13,7 @@ const Create = () => {
         e.preventDefault();
         const addUser = { name, email, age };
 
-        const response = await fetch("http://localhost:2000/User/addData", {
+        const response = await fetch("https://crud-app-q3s2.onrender.com//User/addData", {
             method: "POST",
             body: JSON.stringify(addUser),
             headers: { "Content-Type": "application/json" },

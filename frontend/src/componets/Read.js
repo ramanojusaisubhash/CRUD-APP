@@ -5,7 +5,7 @@ const Read = () => {
     const [error, setError] = useState("");
 
     async function getData() {
-        const response = await fetch("http://localhost:2000/User/getData");
+        const response = await fetch("https://crud-app-q3s2.onrender.com/User/getData");
         const result = await response.json();
 
         if (!response.ok) {
@@ -16,7 +16,7 @@ const Read = () => {
     }
 
     const handleDelete = async (id) => {
-        const response = await fetch(`http://localhost:2000/User/deleteData/${id}`, {
+        const response = await fetch(`https://crud-app-q3s2.onrender.com/User/deleteData/${id}`, {
             method: "DELETE"
         });
         const result = await response.json();
